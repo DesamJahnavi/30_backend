@@ -3,6 +3,7 @@ package com.fsadproject.ps30.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "options") // ✅ FIX
 public class Option {
 
     @Id
