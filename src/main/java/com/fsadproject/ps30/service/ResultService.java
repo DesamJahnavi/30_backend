@@ -42,12 +42,18 @@ public class ResultService {
         Result result = new Result();
         result.setTotalScore(score);
         result.setRecommendation(recommendation);
-        result.setUser(dbUser);              // ✅ FIX
-        result.setAssessment(dbAssessment);  // ✅ FIX
+        result.setUser(dbUser);
+        result.setAssessment(dbAssessment);
 
         return repo.save(result);
     }
 
+    // 🔥 ADD THIS (FOR DEMO SIMPLE SAVE)
+    public Result saveSimpleResult(Result request) {
+        return repo.save(request);
+    }
+
+    // ✅ GET ALL RESULTS
     public List<Result> getAllResults() {
         return repo.findAll();
     }

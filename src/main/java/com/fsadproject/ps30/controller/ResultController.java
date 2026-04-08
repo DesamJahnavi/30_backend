@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000") // optional but good
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/results")
 public class ResultController {
@@ -17,7 +17,7 @@ public class ResultController {
         this.service = service;
     }
 
-    // ✅ POST - save result
+    // ✅ EXISTING METHOD (keep it)
     @PostMapping
     public Result calculate(@RequestBody Result request) {
         return service.calculateResult(
@@ -27,7 +27,13 @@ public class ResultController {
         );
     }
 
-    // 🔥 ADD THIS (THIS IS WHAT YOU WERE MISSING)
+    // 🔥 NEW METHOD (simple submit for demo)
+    @PostMapping("/submit")
+    public Result submitSimple(@RequestBody Result request) {
+        return service.saveSimpleResult(request);
+    }
+
+    // ✅ GET ALL RESULTS
     @GetMapping
     public List<Result> getAllResults() {
         return service.getAllResults();
