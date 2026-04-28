@@ -11,6 +11,7 @@ public class User {
 
     private String name;
     private String email;
+    private String password; // ✅ ADD THIS
     private String role;
 
     // getters & setters
@@ -22,6 +23,9 @@ public class User {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public String getPassword() { return password; } // ✅ ADD
+    public void setPassword(String password) { this.password = password; } // ✅ ADD
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
